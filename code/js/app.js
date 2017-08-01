@@ -38,7 +38,7 @@ var Article = React.createClass({
             text = this.props.data.text,
             bigText = this.props.data.bigText,
             visible = this.state.visible;
-        console.log('render',this);
+
         return (
             <div className='article'>
                 <p className='news__author'>{author}:</p>
@@ -61,10 +61,6 @@ var News = React.createClass({
             counter: 0
         };
     },
-    onTotalNewsClick: function(e) {
-        e.preventDefault();
-        this.setState({counter: ++this.state.counter});
-    },
     render: function() {
         var data = this.props.data;
         var newsTemplate = <p>К сожалению новостей нет</p>;
@@ -83,10 +79,27 @@ var News = React.createClass({
             <div className='news'>
                 {newsTemplate}
                 <strong
-                    onClick={this.onTotalNewsClick}
                     className={'news__count' + (data.length > 0 ? '' : ' none')}>
                     Всего новостей: {data.length}
                     </strong>
+            </div>
+        );
+    }
+});
+
+var TestInput = React.createClass({
+    onClickHandler: function (e) {
+        console.log(this.refs);
+        alert(ReactDOM.findDOMNode(this.refs.myTestInput).value);
+    },
+    render: function() {
+        return (
+            <div>
+                <input defaultValue=''
+                       className='test-input'
+                       placeholder='введите значение'
+                       ref='myTestInput' />
+                <button onClick={this.onClickHandler} ref='btn'>Показать alert</button>
             </div>
         );
     }
@@ -97,6 +110,7 @@ var App = React.createClass({
         return (
             <div className='app'>
                 <h3>Новости</h3>
+                <TestInput />
                 <News data={news} />
             </div>
         );
