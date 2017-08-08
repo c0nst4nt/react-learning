@@ -16,6 +16,8 @@ var news = [
     }
 ];
 
+window.ee = new EventEmitter();
+
 var Article = React.createClass({
     propTypes: {
         data: React.PropTypes.shape({
@@ -100,9 +102,20 @@ var Add = React.createClass({
     },
     onClickHandler: function (e) {
         e.preventDefault();
+        var textInput  = ReactDOM.findDOMNode(this.refs.text);
+        var text = textInput.value;
         var author = ReactDOM.findDOMNode(this.refs.author).value;
-        var text = ReactDOM.findDOMNode(this.refs.text).value;
-        alert(author + '\n' + text);
+
+        var item = [{
+            author: author,
+            text: text,
+            bigText: '...'
+        }];
+
+        window.ee.emit('News.add', item);
+
+        textInput.value = '';
+        this.setState({textIsEmpty: true});
     },
     onFieldChange: function (fieldName, e)
     {
@@ -138,19 +151,35 @@ var Add = React.createClass({
                 <button className='add_btn'
                         onClick={this.onClickHandler}
                         ref='alert_button'
-                        disabled={agreeNotChecked || authorIsEmpty || textIsEmpty}>Показать alert</button>
+                        disabled={agreeNotChecked || authorIsEmpty || textIsEmpty}>Добавить новость</button>
             </form>
         );
     }
 });
 
 var App = React.createClass({
+    getInitialState: function() {
+        return {
+            news: news
+        };
+    },
+    componentDidMount: function() {
+        var self = this;
+        window.ee.addListener('News.add', function(item) {
+            var nextNews = item.concat(self.state.news);
+            self.setState({news: nextNews});
+        });
+    },
+    componentWillUnmount: function() {
+        window.ee.removeListener('News.add');
+    },
     render: function() {
+        console.log('render');
         return (
             <div className='app'>
                 <Add />
                 <h3>Новости</h3>
-                <News data={news} />
+                <News data={this.state.news} />
             </div>
         );
     }
