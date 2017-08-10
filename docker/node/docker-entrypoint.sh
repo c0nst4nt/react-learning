@@ -2,3 +2,5 @@
 set -e
 
 npm install;
+
+exec "$@"

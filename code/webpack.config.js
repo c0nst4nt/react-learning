@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var DEBUG = process.env.NODE_ENV !== 'production';
 
 var plugins = [
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin()
 ];
 
 if (!DEBUG) {
