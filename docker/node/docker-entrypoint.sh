@@ -3,4 +3,4 @@ set -e
 
 npm install;
 
-node server.js
+node react/server.js
