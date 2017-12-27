@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49ea6e04-1894-49e4-8e14-c2e5e72e2d74" name="Default" comment="Fixed typo.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/react-learning.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="49ea6e04-1894-49e4-8e14-c2e5e72e2d74" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <list id="14a04be2-92fd-41d1-9014-e27d554475ee" name="Revert: Trying to add todo mvc isomorphic application on react with usage of flummox. Currently not working :)" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/code/app.js" afterPath="" />
@@ -398,7 +393,7 @@
       <workItem from="1502111481799" duration="4182000" />
       <workItem from="1502209881456" duration="1042000" />
       <workItem from="1502364569746" duration="5884000" />
-      <workItem from="1514386273626" duration="502000" />
+      <workItem from="1514386273626" duration="516000" />
     </task>
     <task id="LOCAL-00001" summary="Added docker config for node container. Created initial config for project. Created simple web server with express.">
       <created>1500998838778</created>
@@ -442,11 +437,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502380362848</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Reverted all flummox code">
+      <created>1514386787782</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1514386787782</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18530000" />
+    <option name="totallyTimeSpent" value="18544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="-4" width="1855" height="1204" extended-state="6" />
@@ -516,7 +518,8 @@
     <MESSAGE value="Added news adding via events. Added event emitter library." />
     <MESSAGE value="Trying to add todo mvc isomorphic application on react with usage of flummox. Currently not working :)" />
     <MESSAGE value="Fixed typo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed typo." />
+    <MESSAGE value="Reverted all flummox code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reverted all flummox code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
