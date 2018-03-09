@@ -29,7 +29,7 @@ module.exports = {
         ],
         loaders: [
             {
-                loaders: ['react-hot-loader/webpack', 'babel-loader'],
+                loaders: ['react-hot', 'babel-loader'],
                 include: [
                     path.resolve(__dirname, "src"),
                 ],
